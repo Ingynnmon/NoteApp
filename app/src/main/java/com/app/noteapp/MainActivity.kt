@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
@@ -13,6 +14,8 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import io.reactivex.disposables.CompositeDisposable
+import kotlinx.android.synthetic.main.content_main.*
 
 
 class MainActivity : AppCompatActivity(){
@@ -21,11 +24,27 @@ class MainActivity : AppCompatActivity(){
     private lateinit var noteViewModel: NoteViewModel
     private lateinit var toolbar: Toolbar
 
+    /*private lateinit var adapter:ArrayAdapter<*>
+    var noteList:MutableList<Note> = ArrayList()
+    //database
+    private var compositeDisposible:CompositeDisposable?=null
+    private val noteRepository:NoteRepository?=null*/
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         toolbar=findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+        /*//init
+        compositeDisposible= CompositeDisposable()
+        adapter= ArrayAdapter(this,R.layout.recyclerview_item,noteList)
+        registerForContextMenu(recyclerview)
+        recyclerview!!.adapter=adapter
+
+        //Database
+        val noteDatabase=NoteRoomDatabase.getDatabase(this)
+        noteRepository=NoteRepository.*/
 
         val recyclerView=findViewById<RecyclerView>(R.id.recyclerview)
         val adapter=NoteListAdapter(this)

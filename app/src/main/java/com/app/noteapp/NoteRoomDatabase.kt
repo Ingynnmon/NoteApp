@@ -19,23 +19,6 @@ abstract class NoteRoomDatabase : RoomDatabase() {
 
     abstract fun noteDao():NoteDAO
 
-    private class PopulateDbAsync internal constructor(db: NoteRoomDatabase) : AsyncTask<Void, Void, Void>() {
-
-        private val mDao: NoteDAO
-
-        init {
-            mDao = db.noteDao()
-        }
-
-        override fun doInBackground(vararg params: Void): Void? {
-            mDao.deleteAll()
-
-            val note=Note("Bamidele", "Oguntuga")
-            mDao.insert(note)
-            return null
-        }
-    }
-
     companion object {
 
         @Volatile private var INSTANCE: NoteRoomDatabase? = null
@@ -65,7 +48,12 @@ abstract class NoteRoomDatabase : RoomDatabase() {
             }
         }
         suspend fun populateDatabase(noteDAO: NoteDAO){
-            var note=Note("Hello","World")
+            //for clear at start
+            //noteDAO.deleteAll()
+            //pre inserted data
+            var note=Note("Welcome","Welcome from the note app!")
+            noteDAO.insert(note)
+            note=Note("Hello","Ingynn")
             noteDAO.insert(note)
         }
 

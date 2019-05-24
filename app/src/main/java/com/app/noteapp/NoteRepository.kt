@@ -20,4 +20,13 @@ class NoteRepository(private val noteDAO : NoteDAO) {
             return null
         }
     }
+
+   /* companion object {
+        private var mInstance: NoteRepository?=null
+        fun getInstance(nNoteDataSource:INoteDataSource):NoteRepository{
+            if(mInstance==null)
+                mInstance= NoteRepository(nNoteDataSource)
+            return mInstance!!
+        }
+    }*/
 }
