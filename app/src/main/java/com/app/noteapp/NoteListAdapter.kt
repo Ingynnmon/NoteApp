@@ -1,17 +1,15 @@
 package com.app.noteapp
 
-import java.nio.file.Files.size
 import android.view.ViewGroup
 import android.view.LayoutInflater
-import android.R.attr.name
 import android.content.Context
 import android.view.View
 import android.widget.TextView
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class NoteListAdapter internal constructor(context: Context) : RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>() {
+class NoteListAdapter internal constructor(context: Context)
+    : RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>() {
 
     private val mInflater: LayoutInflater = LayoutInflater.from(context)
     private var mNotes = emptyList<Note>()

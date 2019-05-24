@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="#ECEFF1">
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
@@ -30,7 +32,7 @@
 
                 <!-- Label -->
                 <TextView
-                        android:text="Note"
+                        android:text="Write Note"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -45,25 +47,28 @@
                     android:orientation="horizontal">
 
                 <TextView
-                        android:text="Title"
+                        android:text="Title : "
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"/>
 
                 <LinearLayout
                         android:layout_marginLeft="50dp"
                         android:layout_height="wrap_content"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:paddingLeft="4dp"
+                        android:paddingLeft="7dp"
                         android:orientation="vertical">
 
                     <!-- Title field -->
                     <EditText
                             android:id="@+id/edit_title"
                             android:hint="Note Title"
+                            android:textSize="15sp"
                             android:inputType="textCapWords"
                             android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"/>
+                            android:layout_width="match_parent"/>
 
                 </LinearLayout>
 
@@ -78,9 +83,11 @@
                     android:orientation="horizontal">
 
                 <TextView
-                        android:text="Description"
+                        android:text="Description : "
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"/>
 
                 <LinearLayout
                         android:layout_marginLeft="5dp"
@@ -95,6 +102,8 @@
                             android:id="@+id/edit_description"
                             android:hint="Note Description"
                             android:inputType="textCapWords"
+                            android:textSize="15sp"
+                            android:maxLines="30"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
@@ -107,6 +116,7 @@
                     android:layout_width="match_parent"
                     android:layout_marginTop="50dp"
                     android:layout_height="wrap_content"
+                    android:textColor="#fff"
                     android:background="@color/colorPrimaryDark"
                     android:text="Save"/>
 
